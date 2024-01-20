@@ -1,21 +1,22 @@
 module.exports = {
+    env: {
+        es2022: true,
+        node: true,
+    },
+    extends: [
+        "eslint:recommended",
+    ],
     root: true,
     parser: '@typescript-eslint/parser',
     plugins: [
-        '@typescript-eslint',
+        '@typescript-eslint'
     ],
-    extends: [
-        'eslint:recommended',
-        'plugin:@typescript-eslint/recommended',
-    ],
-    rules: {
-        'semi': ['error', 'always'],
-        'no-console': 2,
-        'quotes': ['error', 'single'],
-        'curly': 0,
-        'brace-style': ['error', 'stroustrup'],
-        'indent': ['error', 4],
-        'eol-last': ['error', 'never'],
-        '@typescript-eslint/no-unused-vars': 2
-    }
+    "overrides": [
+        {
+            "files": ["test/**/*"],
+            "env": {
+                "jest": true
+            }
+        }
+    ]
 };

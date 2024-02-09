@@ -3,20 +3,16 @@ module.exports = {
         es2022: true,
         node: true,
     },
-    extends: [
-        "eslint:recommended",
-    ],
+    extends: ["eslint:recommended"],
     root: true,
-    parser: '@typescript-eslint/parser',
-    plugins: [
-        '@typescript-eslint'
-    ],
-    "overrides": [
+    parser: "@typescript-eslint/parser",
+    plugins: ["@typescript-eslint"],
+    overrides: [
         {
-            "files": ["test/**/*"],
-            "env": {
-                "jest": true
-            }
-        }
-    ]
+            files: ["test/**/*"],
+            env: {
+                jest: true,
+            },
+        },
+    ],
 };

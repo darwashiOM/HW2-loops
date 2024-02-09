@@ -1,4 +1,3 @@
-# Homework 1- Setup Check
+# Homework 2- Loops and Arrays
 
-
-A simple assignment to verify that you've correctly setup your dev environment and can submit to GradeScope.
+Let's learn all about loops and arrays!

@@ -63,7 +63,7 @@ export function getPlurals(words: string[]): string[] {
  * @returns The first string that ends with 's'
  */
 export function firstPlural(words: string[]): string {
-    return '';
+    return "";
 }
 
 /**
@@ -84,7 +84,7 @@ export function growIfSmall(nums: number[], threshold: number): number[] {
  * @returns The longest string
  */
 export function longestString(words: string[]): string {
-    return '';
+    return "";
 }
 
 /**
@@ -95,13 +95,13 @@ export function longestString(words: string[]): string {
  * @returns The longest string that ends with 's'
  */
 export function longestPlural(words: string[]): string {
-    return '';
+    return "";
 }
-
 
 /**
  * Given two arrays of numbers, add the numbers at each index together and return a new array of the sums.
- * If the arrays are different lengths, use the longer array's length and use zero for the missing values in the smaller array.
+ * If the arrays are different lengths, use the longer array's length and use zero for the missing values
+ * in the smaller array.
  * @param nums1 An array of numbers
  * @param nums2 An array of numbers
  * @returns An array of the sums of the numbers at each index

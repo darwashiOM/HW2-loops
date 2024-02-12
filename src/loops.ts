@@ -169,7 +169,7 @@ export function addPairs(nums1: number[], nums2: number[]): number[] {
             if (i > nums2.length - 1) {
                 newArray.push(nums1[i]);
             } else {
-                newArray.push(nums1[i] + nums2[i]);
+                newArray.push(nums2[i] + nums1[i]);
             }
         }
     } else {

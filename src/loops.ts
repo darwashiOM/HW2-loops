@@ -8,7 +8,11 @@
  * @returns The sum of all numbers in the array
  */
 export function summate(nums: number[]): number {
-    return 0;
+    let total: number = 0;
+    for (let i: number = 0; i < nums.length; i++) {
+        total += nums[i];
+    }
+    return total;
 }
 
 /**
@@ -17,7 +21,11 @@ export function summate(nums: number[]): number {
  * @returns The average of all numbers in the array
  */
 export function average(nums: number[]): number {
-    return 0;
+    let total: number = 0;
+    for (let i: number = 0; i < nums.length; i++) {
+        total += nums[i];
+    }
+    return nums.length !== 0 ? total / nums.length : 0;
 }
 
 /**
@@ -26,7 +34,11 @@ export function average(nums: number[]): number {
  * @returns The array of numbers divided by 2
  */
 export function halve(nums: number[]): number[] {
-    return [];
+    let newArray = [];
+    for (let i: number = 0; i < nums.length; i++) {
+        newArray.push(nums[i] / 2);
+    }
+    return newArray;
 }
 
 /**
@@ -35,7 +47,13 @@ export function halve(nums: number[]): number[] {
  * @returns An array of only positive numbers
  */
 export function onlyPositives(nums: number[]): number[] {
-    return [];
+    let newArray = [];
+    for (let i: number = 0; i < nums.length; i++) {
+        if (nums[i] > 0) {
+            newArray.push(nums[i]);
+        }
+    }
+    return newArray;
 }
 
 /**
@@ -44,7 +62,12 @@ export function onlyPositives(nums: number[]): number[] {
  * @returns The average of only the positive numbers
  */
 export function averagePositives(nums: number[]): number {
-    return 0;
+    let total: number = 0;
+    let length: number = 0;
+    for (let i: number = 0; i < nums.length; i++) {
+        nums[i] > 0 ? (total += nums[i]) : length++;
+    }
+    return length !== nums.length ? total / (nums.length - length) : 0;
 }
 
 /**
@@ -53,7 +76,14 @@ export function averagePositives(nums: number[]): number {
  * @returns An array of only strings that end with 's'
  */
 export function getPlurals(words: string[]): string[] {
-    return [];
+    let newArray: string[] = [];
+    let useless: number = 0;
+    for (let i: number = 0; i < words.length; i++) {
+        words[i].charAt(words[i].length - 1) == "s" ?
+            newArray.push(words[i])
+        :   useless++;
+    }
+    return newArray;
 }
 
 /**
@@ -63,6 +93,11 @@ export function getPlurals(words: string[]): string[] {
  * @returns The first string that ends with 's'
  */
 export function firstPlural(words: string[]): string {
+    for (let i: number = 0; i < words.length; i++) {
+        if (words[i].charAt(words[i].length - 1) === "s") {
+            return words[i];
+        }
+    }
     return "";
 }
 
@@ -73,7 +108,13 @@ export function firstPlural(words: string[]): string {
  * @returns The array of numbers with values less than the threshold increased by 1
  */
 export function growIfSmall(nums: number[], threshold: number): number[] {
-    return [];
+    let newArray: number[] = [];
+    for (let i: number = 0; i < nums.length; i++) {
+        nums[i] < threshold ?
+            newArray.push(nums[i] + 1)
+        :   newArray.push(nums[i]);
+    }
+    return newArray;
 }
 
 /**
@@ -84,7 +125,13 @@ export function growIfSmall(nums: number[], threshold: number): number[] {
  * @returns The longest string
  */
 export function longestString(words: string[]): string {
-    return "";
+    let answer: string = "";
+    for (let i: number = 0; i < words.length; i++) {
+        if (words[i].length > answer.length) {
+            answer = words[i];
+        }
+    }
+    return answer;
 }
 
 /**
@@ -95,7 +142,16 @@ export function longestString(words: string[]): string {
  * @returns The longest string that ends with 's'
  */
 export function longestPlural(words: string[]): string {
-    return "";
+    let answer: string = "";
+    for (let i: number = 0; i < words.length; i++) {
+        if (
+            words[i].length > answer.length &&
+            words[i].charAt(words[i].length - 1) === "s"
+        ) {
+            answer = words[i];
+        }
+    }
+    return answer;
 }
 
 /**
@@ -107,5 +163,23 @@ export function longestPlural(words: string[]): string {
  * @returns An array of the sums of the numbers at each index
  */
 export function addPairs(nums1: number[], nums2: number[]): number[] {
-    return [];
+    let newArray: number[] = [];
+    if (nums1.length > nums2.length) {
+        for (let i: number = 0; i < nums1.length; i++) {
+            if (i > nums2.length - 1) {
+                newArray.push(nums1[i]);
+            } else {
+                newArray.push(nums1[i] + nums2[i]);
+            }
+        }
+    } else {
+        for (let i: number = 0; i < nums2.length; i++) {
+            if (i > nums1.length - 1) {
+                newArray.push(nums2[i]);
+            } else {
+                newArray.push(nums2[i] + nums1[i]);
+            }
+        }
+    }
+    return newArray;
 }
